@@ -26,4 +26,7 @@ export class TodayWetherComponent implements OnInit {
       }))
     }
   }
+  getCityWeatther(name:string){
+    this.wetherService.GetcurrentWetherDataByCityName(name);
+  }
 }

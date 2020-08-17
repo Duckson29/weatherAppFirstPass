@@ -1,10 +1,23 @@
-<div class="row">
+<div class="row" style="padding: 2%;">
   <div class="col-md-6 offset-md-3">
   <div class="col-sm-12 text-center">
+
+    <h5>Vej app </h5>
+    <h5>vejet i {{wether.main.name}}</h5>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="By Navn" #userinput>
+      </div>
+      <span class="form-group bmd-form-group">
+        <button type="submit" class="btn btn-primary" (click)='getCityWeatther(userinput.value)'>Søg(Todo:insert looking glass)</button>
+      </span>
+    </form>
+<!-- "assets/{{wether.weather[0].icon}}@2x.png" -->
     <div>
-      <span class="temp"><img> {{wether.main.temp | number:'1.0-0'}} &#176;F </span>
+      <span class="temp"><img src="../../assets/Icons/{{wether.weather[0].icon}}@2x.png"> {{wether.main.temp | number:'1.0-0'}} &#176;F </span>
     </div>
-    <table>
+    <table class="table table-dark table-striped table-bordered table-sm">
       <tbody>
         <tr>
           <td>luftfugthed</td><td>{{wether.main.humidity}}%</td>

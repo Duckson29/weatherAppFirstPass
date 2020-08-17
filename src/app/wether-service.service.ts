@@ -13,4 +13,9 @@ export class WetherServiceService {
     let params = new HttpParams().set('lat',lat).set('lon',lon).set('units','metric').set('appid',this.apiKey)
     return this.http.get(this.url,{ params });
   }
+  //q is the city name
+  GetcurrentWetherDataByCityName(city:string){
+    let params = new HttpParams().set('q',city).set('units','metric').set('appid',this.apiKey)
+    return this.http.get(this.url,{ params });
+  }
 }
